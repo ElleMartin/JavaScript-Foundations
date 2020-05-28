@@ -88,11 +88,11 @@ Then, add control flow within your function such that IF creditScore is above 74
 function mortgageCalculator(name,monthlyRate){
 
     if(creditScore > 740){
-        let monthlyRate = (numerator / denominator * principle - .005).toFixed(2);
+        let monthlyRate = (numerator / denominator * principle - 0.005).toFixed(2);
         return name + ', your monthly rate is $' + monthlyRate;
       }
     else if(creditScore < 660){
-        let monthlyRate = (numerator / denominator * principle + .005).toFixed(2);
+        let monthlyRate = (numerator / denominator * principle + 0.005).toFixed(2);
         return name + ', your monthly rate is $' + monthlyRate; 
     }
     else {
@@ -120,9 +120,13 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-function variableInterestRate(name,monthlyRate){
-    
+function variableInterestRate(p,i,n){
+    for (i = 0.02; i >= 0.06; i = i + 0.005){
+        let monthlyRate = (numerator / denominator * p).toFixed(2);
+        return name + ', with an interest rate of' + i + ', your monthly rate is' + monthlyRate;
+    }
 }
+console.log(variableInterestRate(p,i,n));
 
 
 
